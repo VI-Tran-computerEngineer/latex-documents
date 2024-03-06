@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Sensor implementation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Data getting Block}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Real time Block}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Json package Block}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{UART data sending Block}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Gateway implementation}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{UART received data}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Data uploading process}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Server configuration}{}% 10
+\BOOKMARK [1][-]{section.5}{Monitoring application}{}% 11
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12
+\BOOKMARK [1][-]{section.6}{Reference}{}% 13

@@ -1,0 +1,203 @@
+\documentclass[13pt,a4paper]{article}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{vntex}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+
+\newtheorem{theorem}{{\bf Theorem}}
+\newtheorem{property}{{\bf Property}}
+\newtheorem{proposition}{{\bf Proposition}}
+\newtheorem{corollary}[proposition]{{\bf Corollary}}
+\newtheorem{lemma}[proposition]{{\bf Lemma}}
+
+\AtBeginDocument{\renewcommand*\contentsname{Contents}}
+\AtBeginDocument{\renewcommand*\refname{References}}
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+	\begin{tabular}{rl}
+		\begin{picture}(25,15)(0,0)
+			\put(0,-8){\includegraphics[width=8mm, height=8mm]{hcmut.png}}
+			%\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+		\end{picture}&
+		%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+		\begin{tabular}{l}
+			\textbf{\bf \ttfamily University of Technology, Ho Chi Minh City}\\
+			\textbf{\bf \ttfamily Faculty of Computer Science and Engineering}
+		\end{tabular} 	
+	\end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Lab 8 for Operating Systems year 2020 - 2021}
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY \\
+			UNIVERSITY OF TECHNOLOGY \\
+			FACULTY OF COMPUTER SCIENCE AND ENGINEERING
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{figure}[h!]
+			\begin{center}
+				\includegraphics[width=3cm]{hcmut.png}
+			\end{center}
+		\end{figure}
+		
+		\vspace{1cm}
+		
+		\begin{center}
+			\color{blue}
+			\begin{tabular}{c}
+				\multicolumn{1}{l}{\textbf{\centerline{{\Huge OPERATING SYSTEMS}}}}\\
+				~~\\
+				\hline
+				\\
+				\multicolumn{1}{l}{\textbf{\centerline{{\LARGE Report \#08}}}}\\
+				\\
+				\textbf{{\huge Lab 08 : Contiguous Memory Allocation}}\\
+				\\
+				\hline
+			\end{tabular}
+			\color{blue}
+		\end{center}
+		\vspace{1cm}
+		
+		\begin{table}[h]
+			\color{blue}
+			\begin{tabular}{rrl}
+				\hspace{5 cm} & Advisor: & Tran Viet Toan\\
+				& Students: & Tran Long Vi - 1814804 \\
+			\end{tabular}
+			\color{blue}
+		\end{table}
+		
+		\vspace{4 cm}
+		\begin{center}
+			{\footnotesize\large HO CHI MINH CITY, DECEMBER 2020}
+		\end{center}
+	\end{titlepage}
+	
+	
+	%\thispagestyle{empty}
+	\newpage
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Exercise 1 :}
+		Given six memory partitions of 300 KB, 600 KB, 350 KB, 200 KB, 750 KB, and 125 KB (in order), how would the first-fit, best-fit, and worst-fit algorithms place processes of size 115 KB, 500 KB, 358 KB, 200 KB, and 375 KB (in order)? Rank the algorithms in terms of how efficiently they use memory. \\ \\
+		\textit{\underline{\textbf{Proof:}}} 
+		\begin{enumerate}[$\ast$]
+			\item \textbf{First-Fit Algorithm:}
+				\begin{enumerate}[-]
+					\item Allocating 115 KB to memory partition of 300 KB.
+					\item Allocating 500 KB to memory partition of 600 KB.
+					\item Allocating 358 KB to memory partition of 750 KB.
+					\item Allocating 200 KB to memory partition of 350 KB.
+					\item Allocating 375 KB to memory partition of 750 KB. Because memory partition of 750 KB still have $750 - 358 = 392$ KB memory location unused. 
+					\item[$\rightarrow$] Total unused memory = 452 KB (memory partition of 125 KB is not used so we ignored it).
+				\end{enumerate}
+			\item \textbf{Best-Fit Algorithm:}
+				\begin{enumerate}[-]
+					\item Allocating 115 KB to memory partition of 125 KB.
+					\item Allocating 500 KB to memory partition of 600 KB.
+					\item Allocating 358 KB to memory partition of 750 KB.
+					\item Allocating 200 KB to memory partition of 200 KB.
+					\item Allocating 375 KB to memory partition of 750 KB. Because memory partition of 750 KB still have $750 - 358 = 392$ KB memory location unused. 
+					\item[$\rightarrow$] Total unused memory = 127 KB (memory partition of 300 KB is not used so we ignored it).
+				\end{enumerate}
+			\item \textbf{Worst-Fit Algorithm:}
+				\begin{enumerate}[-]
+					\item Allocating 115 KB to memory partition of 750 KB.
+					\item Allocating 500 KB to memory partition of 600 KB.
+					\item Allocating 358 KB to memory partition of 750 KB. Because memory partition of 750 KB still have $750 - 115 = 635$ KB memory location unused.
+					\item Allocating 200 KB to memory partition of 200 KB.
+					\item Process size 375 KB must wait for other processes to finish to access the compatible memory. Because other memory locations is not enough size  to allocated to that process. 
+					\item[$\rightarrow$] Total unused memory = 377 KB. Memory partition of 300 KB, 350 KB and 150 KB is not used although Process size 375 KB has not been allocated.
+				\end{enumerate}
+			\item[$\Rightarrow$] Based on above results, the most effective memory usage algorithm is \textit{Best-Fit} and the least effective memory usage algorithm is \textit{Worst-Fit}.
+		\end{enumerate}
+	\section{Exercise 2 :}
+		Student write a short report that compares the advantages as well as disadvantages of the allocation algorithms, namely \textbf{First-Fit, Best-Fit, Worst-Fit}.
+		\\ \\
+		\textit{\underline{\textbf{Proof:}}} 
+		\begin{enumerate}[$\ast$]
+			\item \textbf{First-Fit Algorithm:}
+				\begin{enumerate}[$\bullet$]
+					\item Advantages: This is the fastest algorithm in three algorithms mentioned above.
+					\item Disadvantages:
+						\begin{enumerate}[-]
+							\item Tends to leave “average” size holes inside memory allocated.
+							\item If the process has large memory comes later, it may not be allocated memory location and must wait.
+						\end{enumerate}
+				\end{enumerate}
+			\item \textbf{Best-Fit Algorithm:}
+				\begin{enumerate}[$\bullet$]
+					\item Advantages: 
+						\begin{enumerate}[-]
+							\item This algorithm uses memory effectively, avoiding wasting resources.
+							\item Although this algorithm allocates the minimum possible memory space, the lack of memory to allocate to later processes must wait or lost even though there is still free memory location.
+						\end{enumerate}
+					\item Disadvantages:
+						\begin{enumerate}[-]
+							\item This algorithm is so slow because it takes time to find the most suitable memory location for each process.
+							\item It easily occurs high fragmentation.
+						\end{enumerate}
+				\end{enumerate}
+			\item \textbf{Worst-Fit Algorithm:}
+				\begin{enumerate}[$\bullet$]
+					\item Advantages: Avoid to leave “average” size holes inside memory allocated.
+					\item Disadvantages:
+						\begin{enumerate}[-]
+							\item This algorithm is so slow because it takes time to find memory location for each process.
+							\item Later processes must wait or lost even though there is still free memory location.
+						\end{enumerate}
+				\end{enumerate}
+		\end{enumerate}
+\end{document}

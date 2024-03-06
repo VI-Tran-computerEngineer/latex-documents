@@ -1,0 +1,47 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Phần chung}{2}{section.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Các câu lệnh tạo bảng và ràng buộc}{2}{subsection.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Các câu lệnh tạo chỉ mục}{6}{subsection.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3}Các câu lệnh insert dữ liệu}{7}{subsection.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.1}Bảng "DISHES"}{8}{subsubsection.1.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.2}Bảng "ORDER\_DISHES"}{8}{subsubsection.1.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.3}Bảng "DISHES\_LIST"}{9}{subsubsection.1.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.3.4}Bảng "ORDER\_BILLS"}{10}{subsubsection.1.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Phần riêng}{10}{section.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Thành viên 1}{10}{subsection.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.1}Thủ tục Insert dữ liệu}{10}{subsubsection.2.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.1.1}Thủ tục Insert dữ liệu cho bảng "ORDER\_DISHES"\\}{10}{paragraph.2.1.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.1.2}Thủ tục insert dữ liệu cho bảng "DISHES\_LIST"\\}{12}{paragraph.2.1.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.2}Trigger}{14}{subsubsection.2.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.2.1}Trigger kiểm soát các hành động của bảng "DISHES\_LIST"\\}{14}{paragraph.2.1.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.2.2}Trigger kiểm soát các hành động của bảng "ORDER\_DISHES"\\}{16}{paragraph.2.1.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.3}Thủ tục chứa câu SQL}{18}{subsubsection.2.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.3.1}Thủ tục truy vấn danh sách món ăn dựa trên order\_id\\}{18}{paragraph.2.1.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.3.2}Thủ tục truy vấn các thông tin liên quan đến đơn hàng\\}{19}{paragraph.2.1.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.4}Hàm}{19}{subsubsection.2.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.4.1}Hàm tính giá được giảm bởi voucher\\}{19}{paragraph.2.1.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {2.1.4.2}Hàm tính số tiền phải thanh toán\\}{20}{paragraph.2.1.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.1.5}Giao diện ứng dụng và các hình ảnh minh họa}{21}{subsubsection.2.1.5}%

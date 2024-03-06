@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Research introdution}{}% 1
+\BOOKMARK [1][-]{section.2}{ROS introdution}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{What is ROS?}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Why ROS?}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Components of ROS}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Terminologies and conventions}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{ROS version: Noetic}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Communication diagram between nodes in ROS}{}% 8
+\BOOKMARK [1][-]{section.4}{Implementation}{}% 9
+\BOOKMARK [1][-]{section.5}{Gazebo}{}% 10
+\BOOKMARK [1][-]{section.6}{Slam}{}% 11
+\BOOKMARK [1][-]{section.7}{Robot Motion Node}{}% 12
+\BOOKMARK [1][-]{section.8}{Robot Global Vision Update}{}% 13
+\BOOKMARK [1][-]{section.9}{Catkin and Cmake}{}% 14
+\BOOKMARK [2][-]{subsection.9.1}{Catkin build system}{section.9}% 15
+\BOOKMARK [2][-]{subsection.9.2}{CMake and CMakeList.txt}{section.9}% 16
+\BOOKMARK [1][-]{section.10}{Demo}{}% 17

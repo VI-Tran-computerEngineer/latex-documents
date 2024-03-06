@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Scheduling}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Questions}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Implementation}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Priority queue}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Scheduler}{subsection.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.3}{Gantt Diagrams}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Test 1}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Test 2}{subsection.1.3}% 8
+\BOOKMARK [1][-]{section.2}{Memory management}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{Questions}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Implement and show the status of RAM}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.3}{Explain file input m0}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{Overall}{}% 13
+\BOOKMARK [1][-]{section.4}{Simulation}{}% 14

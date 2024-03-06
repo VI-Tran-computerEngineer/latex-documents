@@ -1,0 +1,169 @@
+\documentclass[13pt,a4paper]{article}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{vntex}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+
+\newtheorem{theorem}{{\bf Theorem}}
+\newtheorem{property}{{\bf Property}}
+\newtheorem{proposition}{{\bf Proposition}}
+\newtheorem{corollary}[proposition]{{\bf Corollary}}
+\newtheorem{lemma}[proposition]{{\bf Lemma}}
+
+\AtBeginDocument{\renewcommand*\contentsname{Contents}}
+\AtBeginDocument{\renewcommand*\refname{References}}
+%\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+	\begin{tabular}{rl}
+		\begin{picture}(25,15)(0,0)
+			\put(0,-8){\includegraphics[width=8mm, height=8mm]{hcmut.png}}
+			%\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+		\end{picture}&
+		%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+		\begin{tabular}{l}
+			\textbf{\bf \ttfamily University of Technology, Ho Chi Minh City}\\
+			\textbf{\bf \ttfamily Faculty of Computer Science and Engineering}
+		\end{tabular} 	
+	\end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf 
+\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\scriptsize \ttfamily Lab 6 for Operating Systems year 2020 - 2021}
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY \\
+			UNIVERSITY OF TECHNOLOGY \\
+			FACULTY OF COMPUTER SCIENCE AND ENGINEERING
+		\end{center}
+		
+		\vspace{1cm}
+		
+		\begin{figure}[h!]
+			\begin{center}
+				\includegraphics[width=3cm]{hcmut.png}
+			\end{center}
+		\end{figure}
+		
+		\vspace{1cm}
+		
+		\begin{center}
+			\color{blue}
+			\begin{tabular}{c}
+				\multicolumn{1}{l}{\textbf{\centerline{{\Huge OPERATING SYSTEMS}}}}\\
+				~~\\
+				\hline
+				\\
+				\multicolumn{1}{l}{\textbf{\centerline{{\LARGE Report \#06}}}}\\
+				\\
+				\textbf{{\Huge Lab 06 : Synchronization}}\\
+				\\
+				\hline
+			\end{tabular}
+			\color{blue}
+		\end{center}
+		\vspace{1cm}
+		
+		\begin{table}[h]
+			\color{blue}
+			\begin{tabular}{rrl}
+				\hspace{5 cm} & Advisor: & Tran Viet Toan\\
+				& Students: & Tran Long Vi - 1814804 \\
+			\end{tabular}
+			\color{blue}
+		\end{table}
+		
+		\vspace{4 cm}
+		\begin{center}
+			{\footnotesize\large HO CHI MINH CITY, SEPTEMBER 2020}
+		\end{center}
+	\end{titlepage}
+	
+	
+	%\thispagestyle{empty}
+	\newpage
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{PROBLEM 1}
+		Race conditions are possible in many computer systems. Consider a banking system that maintains an account balance with two functions: deposit (amount) and withdraw (amount). These two functions are passed the amount that is to be deposited or withdrawn from the bank account balance. Assume that a husband and wife share a bank account. Concurrently, the husband calls the \textit{withdraw()} function and the wife calls \textit{deposit()}. Write a short essay listing possible outcomes we could get and pointing out in which situations those outcomes are produced. Also, propose methods that the bank could apply to avoid unexpected results. \\
+		\\
+		\textit{\underline{\textbf{Proof:}}}
+		\newline
+		\hspace{1 cm} When the husband calls the \textit{withdraw()} function and the wife calls \textit{deposits()}, the results may happen 3 possible cases as follow: 
+		\begin{itemize}
+			\item[$\bullet$] The \textit{withdraw()} function has been executed to decrease static variable \textit{money}(total amount of money's both husband and wife) before the \textit{deposits()} function is executed to increase \textit{money}. The result of this case is:\\
+				\centerline{$money = money - amount\_withdrawn + amount\_deposit$}
+			\item[$\bullet$] The \textit{withdraw()} function is executed after the \textit{deposits()} function has been executed. The result of this case is:\\
+				\centerline{$money = money + amount\_deposit - amount\_withdrawn$}
+			\item[$\bullet$] The \textit{withdraw()} function is executed concurrently with the \textit{deposits()} function. There are 2 results of this case:
+			\begin{enumerate}
+				\item[$\circ$] withdraw(): $money = money - amount\_withdrawn$
+							\\ deposit(): $money = money + amount\_deposit$
+							\\$\rightarrow$ As a result, the amount of money increases by \textit{deposit()} function without being reduced by \textit{withdraw()} function.
+				\item[$\circ$] deposit(): $money = money + amount\_deposit$
+							\\ withdraw(): $money = money - amount\_withdrawn$
+							\\$\rightarrow$ As a result, the amount of money decreases by
+							\textit{withdraw()} function without being increased by \textit{deposit()} function.
+			\end{enumerate}
+			$\Rightarrow$ This case is happened because static variable \textit{money} has not been saved and updated before other function accesses that variable's address.
+		\end{itemize}
+		To overcome this problem, the bank can lock account balance when an account is trying to change it. The \textit{mutex} key will lock all other processes trying to change the value whenever current process is executing and only unlock when the current process finished.
+	\section{PROBLEM 2}
+		In the Exercise 1 of Lab 5, we wrote a simple multi-thread program for calculating the value of pi using Monte-Carlo method. In this exercise, we also calculate pi using the same method but with a different implementation. We create a shared (global) count variable and let worker threads update on this variable in each of their iteration instead of on their own local count variable. To make sure the result is correct, remember to avoid race conditions on updates to the shared global variable by using \textit{mutex} locks. Compare the performance of this approach with the previous one in Lab 5.
+		\\
+		\textit{\underline{\textbf{Proof:}}}
+		\newline
+		It takes more time to execute a program with \textit{mutex} dispute resolution than an equivalent program without using \textit{mutex}. When using mutex, to protect global resources, a thread must go through all three steps:
+		\begin{itemize}
+			\item[$\bullet$] Current thread calls \textit{mutex} to lock critical section after current thread has accessed to it.
+			\item[$\bullet$] Executing commands in critical section.
+			\item[$\bullet$] Unlocking \textit{mutex} after current thread has finished.
+		\end{itemize}
+		Although it takes more time to execute the program, using \textit{mutex} can solve critical problems about disputing common resources, global variables. 
+\end{document}

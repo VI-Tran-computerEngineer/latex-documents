@@ -1,0 +1,202 @@
+\documentclass[13pt,a4paper]{article}
+\usepackage{a4wide,amssymb,epsfig,latexsym,multicol,array,hhline,fancyhdr}
+\usepackage{vntex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{lastpage}
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{subfig}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+%\usepackage{pstcol} 								% PSTricks with the standard color package
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+	{-3.25ex\@plus -1ex \@minus -.2ex}%
+	{1.5ex \@plus .2ex}%
+	{\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\begin{document}
+	\tableofcontents
+	\newpage
+	\section{Hệ}
+	Hệ đông lực tính VP:
+	\begin{align*}
+		\color{blue}
+			cap_{VP_{Air}}\dot{VP_{Air}} &= MV_{CanAir} + MV_{PadAir} + MV_{FogAir} + MV_{BlowAir} \\
+			& - MV_{AirThScr} - MV_{AirTop} - MV_{AirOut} - MV_{AirOut\_Pad} - MV_{AirMech}, [kg\ m^{-2}\ s^{-1}] \\
+			cap_{VP_{Top}}\dot{VP_{Top}} &= MV_{AirTop} - MV_{TopCov,in} - MV_{TopOut}
+		\color{blue}
+	\end{align*}
+	Hệ trên gồm 11 phương trình:
+	\section{Phương trình 1}
+		\begin{align}
+			\color{blue}
+				MV_{CanAir} = {VEC}_{CanAir}(VP_{Can} - VP_{Air}), (kg\ m^{-2}\ s^{-1})
+			\color{blue}
+			\label{pt1}
+		\end{align}
+		Phương trình \ref{pt1} có $VEC$ đc tính bằng:
+		\begin{align*}
+			\color{blue}
+				VEC_{CanAir} = \dfrac{2\rho_{Air}c_{p,Air}LAI}{\Delta H \gamma (r_b + r_s)}
+			\color{blue}
+		\end{align*}
+		trong đó:
+		\begin{align*}
+			\color{blue}
+				r_s = r_{s,min}\cdot rf(R_{Can})\cdot rf({CO_2}_{Air\_ppm}) \cdot rf(VP_{Can} - VP_{Air}), [s/m]
+			\color{blue}
+		\end{align*}
+		Với:
+		\begin{align*}
+			\color{blue}
+				rf(R_{Can}) = \dfrac{R_{Can} + c_{evap1}}{R_{Can} + c_{evap2}} \\
+				rf({CO_2}_{Air}) = 1 + c_{evap3}(\eta_{mg\_ppm} {CO_2}_{Air} - 200)^2 \\
+				rf(VP_{Can} - VP_{Air}) = 1 + c_{evap4}(VP_{Can} - VP_{Air})^2
+			\color{blue}
+		\end{align*}
+		Bao gồm:
+		\begin{align*}
+			\color{blue}
+				c_{evap3} = c^{night}_{evap3}(1 - S_{r_s}) + c^{night}_{evap3} S_{r_s}
+			\color{blue}
+		\end{align*}
+		$c_{evap4}$ $(Pa^{-2})$ tương tự như $c_{evap3}$ $(ppm^{-2})$, lưu ý là khác đơn vị
+	\section{Phương trình 2}
+		\begin{align}
+			\color{blue}
+				MV_{PadAir} = \rho_{Air}f_{Pad}(\eta_{Pad}(x_{Pad} - x_{Out}) + x_{Out})
+			\color{blue}
+			\label{pt2}
+		\end{align}
+		Trong phương trình \ref{pt2}, $f_{Pad}$ đã được đề cập trong phương trình (5) phần $CO_2$:
+		\begin{align*}
+			\color{blue}
+				f_{Pad} = U_{Pad}\phi_{Pad} / A_{Flr}, [m^3 m^{-2} s^{-1}]
+			\color{blue}
+		\end{align*}
+	\section{Phương trình 3}
+		\begin{align}
+			\color{blue}
+				MV_{AirOut\_pad} = f_{Pad}\frac{M_{Water}}{R}(\dfrac{VP_{Air}}{T_{Air} + 273.15})
+			\color{blue}
+			\label{pt3}
+		\end{align}
+		Với $f_{Pad}$ lấy từ phương trình \ref{pt2}
+	\section{Phương trình 4}
+		\begin{align}
+			\color{blue}
+				MV_{FogAir} = \dfrac{U_{Fog}\phi_{Fog}}{A_{Flr}}
+			\color{blue}
+			\label{pt4}
+		\end{align}
+	\section{Phương trình 5}
+		\begin{align}
+			\color{blue}
+				MV_{BlowAir} = \eta_{HeatVap}H_{BlowAir}
+			\color{blue}
+			\label{pt5}
+		\end{align}
+	\section{Phương trình 6}
+		\begin{align}
+			\color{blue}
+				MV_{AirThScr} = \left\{\begin{array}{llr}
+					0,& VP_{Air} < VP_{ThScr} \\
+					6.4\cdot 10^{-9} HEC_{AirThScr}(VP_{Air} - VP_{ThScr}).& VP_{Air} > VP_{ThScr}
+				\end{array}\right.
+			\color{blue}
+			\label{pt6}
+		\end{align}
+		Trong pt\ref{pt6}:
+		\begin{align*}
+			\color{blue}
+				HEC_{AirThScr} = 1.7U_{ThScr}{|T_{Air} - T_{ThScr}|}^{0.33}
+			\color{blue}
+		\end{align*}
+	\section{Phương trình 7}
+		\begin{align}
+			\color{blue}
+				MV_{TopCov,in} = \left\{\begin{array}{llr}
+					0,& VP_{Top} < VP_{Cov,in} \\
+					6.4\cdot 10^{-9} HEC_{TopCov,in}(VP_{Top} - VP_{Cov,in}).& VP_{Top} > VP_{Cov,in}
+			\end{array}\right.
+			\color{blue}
+			\label{pt7}
+		\end{align}
+		Trong pt\ref{pt7}:
+		\begin{align*}
+			\color{blue}
+				HEC_{TopCov,in} = c_{HECin}{(T_{Top} - T_{Cov,in})}^{0.33}\frac{A_{Cov}}{A_{Flr}}
+			\color{blue}
+		\end{align*}
+	\section{Phương trình 8}
+		\begin{align}
+			\color{blue}
+				MV_{AirTop} = \frac{M_{Water}}{R}f_{ThScr}(\dfrac{VP_{Air}}{T_{Air} + 273.15} - \dfrac{VP_{Top}}{T_{Top} + 273.15})
+			\color{blue}
+			\label{pt8}
+		\end{align}
+		Trong đó, $f_{ThScr}$ là PT (7) được mô tả trong hệ $CO_2$
+	\section{Phương trình 9}
+		\begin{align}
+			\color{blue}
+				MV_{AirOut} = \frac{M_{Water}}{R}(f_{VentSide} + f_{VentForced})(\dfrac{VP_{Air}}{T_{Air} + 273.15} - \dfrac{VP_{Top}}{T_{Top} + 273.15})
+			\color{blue}
+			\label{pt9}
+		\end{align}
+		Trong đó, $f_{VentSide}, f_{VentForced}$ là PT (13), (14) được mô tả trong hệ $CO_2$
+	\section{Phương trình 10}
+		\begin{align}
+			\color{blue}
+				MV_{TopOut} = \frac{M_{Water}}{R}f_{VentRoof}(\dfrac{VP_{Air}}{T_{Air} + 273.15} - \dfrac{VP_{Top}}{T_{Top} + 273.15})
+			\color{blue}
+			\label{pt10}
+		\end{align}
+		Trong đó, $f_{VentRoof}$ là PT (16) được mô tả trong hệ $CO_2$
+	\section{Phương trình 11}
+		\begin{align}
+			\color{blue}
+			MV_{AirMech} = \left\{\begin{array}{llr}
+				0,& VP_{Air} < VP_{MechCool} \\
+				6.4\cdot 10^{-9} HEC_{MechAir}(VP_{Air} - VP_{MechCool}).& VP_{Air} > VP_{MechCool}
+			\end{array}\right.
+			\color{blue}
+			\label{pt11}
+		\end{align}
+		Trong pt\ref{pt7}:
+		\begin{align*}
+			\color{blue}
+				HEC_{AirMech} = \dfrac{U_{MechCool}COP_{MechCool}P_{MechCool}/A_{Flr}}{T_{Air} - T_{MechCool} +6.4\cdot 10^{-9}\Delta H ()(VP_{Air} - VP_{MechCool}}
+			\color{blue}
+		\end{align*}
+	\section{Vị trí đọc}
+	Bảng 8.4 \\
+	8.7 Vapour Fluxes \\
+	8.9 Canopy transpiration (MV CanAir)\\
+	8.10.5 Mechanical cooling (MV AirMech) \\
+	8.10.1 Direct air heater (MV BlowAir) \\
+	8.10.4 Pad and fan cooling (MV Pad Air, MV AirOut Pad) \\
+	8.10.6 Fogging (MV FogAir) \\
+\end{document}

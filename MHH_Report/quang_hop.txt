@@ -1,0 +1,152 @@
+	\subsection{Sự quang hợp của thực vật nhóm C3}
+			Bên cạnh những yếu tố từ môi trường và từ con người, quá trình quang hợp của thực vật, mà ở trong bài tập này là về thực vật nhóm C3, cũng ảnh hưởng nhiều đến nồng độ khí \co2 trong nhà kính. Quang hợp là quá trình sử dụng khí \co2, nước và năng lượng từ ánh sáng mặt trời để tạo thành các hợp chất hữu cơ	nuôi cây. Quá trình này chủ yếu được thực hiện nhờ diệp lục (chlorophyll) chứa trong lục lạp (chloroplast), một bào quan đặc biệt, của tế bào lá cây và cây. Sự quang hợp diễn ra theo hai pha gồm pha sáng và pha tối. Ở pha sáng, lá cây hấp thụ ánh sáng mặt trời và thực hiện quá trình chuyển hóa thành năng lượng ở thành phần thylakoid trên lục lạp nhằm cung cấp năng lượng cho pha tối. Sản phẩm của pha sáng là NADPH (Nicotinamide Adenine Dinucleotide phosphate) và ATP (Adenosine Triphosphate). Ở pha tối, thông qua một chu trình Calvin, gồm một chuỗi các phản ứng hóa sinh cố định \co2, khử \co2, tái tạo chất nhận \co2 là enzyme Rubisco xảy ra ở chất nền (stroma) của lục lạp mà không cần đến ánh sáng.
+			\begin{figure}[h!]
+				\begin{center}
+					\includegraphics[width=10cm]{luclap.png}
+					\caption{\textit{Lục lạp}}
+					\label{h10}
+					\includegraphics[width=10cm]{calvin.png}
+					\caption{\textit{Pha sáng (trái) và pha tối (phải) trong quá trình quang hợp}}
+					\label{h11}
+				\end{center}
+			\end{figure}
+			
+			\subsubsection{Mô hình quang hợp cho một đơn vị lá}
+				\textbf{$\bullet$ Sự khuếch tán \co2 vào trong lá} \\
+					Tốc độ quang hợp \textcolor{blue}{$P$} của một đơn vị lá có thể được xem như tốc độ khí \co2 khuếch tán từ không khí vào bên trong tế bào lá thông qua các lỗ khí khổng (stomata) nằm rải rác trên hai mặt lá như trong Hình \ref{h12}. Quá trình khuếch tán được biểu diễn bởi định luật Fick cho bởi
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{stomata.png}
+							\caption{\textit{Sự khuếch tán \co2 vào bên trong lá (trái) và khí khổng (phải)}}
+							\label{h12}
+						\end{center}
+					\end{figure}
+					\begin{align}
+						\textcolor{blue}{
+							P = \frac{\co2_{Air} - \co2_{Stom}}{Res}}
+						\tag{20} \label{ct20}
+					\end{align}
+					Trong đó \textcolor{blue}{$\co2_{Stom}$} là nồng độ khí \co2 hấp thụ vào trong khí khổng $(\mu mol\ m^{-3})$ và \textcolor{blue}{$Res$} là hệ số cản trở sự hấp thụ \co2 vào bên trong tế bào lá $(s\ m^{-1})$. Hệ số cản trở này phụ thuộc vào	nhiều yếu tố trong đó có tốc độ gió thổi qua lá cây.
+					\\ \\
+				\textbf{$\bullet$ Quá trình sinh hóa ở pha tối} \\
+					Quá trình sinh hóa ở pha tối của quang hợp xảy ra trong chất nền của lục lạp giữa lượng khí \co2 đã được hấp thụ và enzyme Rubisco có trong chất nền của lục lạp để tạo thành phức hợp không bền và tiếp tục phân tách tái tạo lại thành enzyme và sinh ra các sản phẩm kèm theo. Các mô hình động lực Michaelis–Menten (do nhà sinh học người Đức Leonor Michaelis và nhà vật lý người Canada Maud Menten) có thể được dùng để biểu diễn các quá trình này. Michaelis và Menten đã nhận thấy rằng, tốc độ phản ứng cũng là tốc độ thay đổi của sản phẩm sinh ra bởi sự phân tách của phức hợp không bền đúng bằng tốc độ phản ứng ở điểm bão hòa (có thể hiểu như tốc độ tối đa mà phản ứng có thể đạt được) nhân với tỷ lệ giữa nồng độ chất tham gia phản ứng trong chất nền và tổng của chính nó và nồng độ của chất tham gia phản ứng khi tốc độ phản ứng bằng đúng $50\%$ tốc độ phản ứng tại điểm bão hòa (xem Hình \ref{h13}).
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{Michaelin-Menten.png}
+							\caption{\textit{Mô hình hệ động lực Michaelin - Menten}}
+							\label{h13}
+						\end{center}
+					\end{figure}
+					Khi đó, tốc độ quang hợp cho bởi công thức
+					\begin{align}
+						\textcolor{blue}{
+						P = \frac{P_{Max} \cdot \co2_{Stom}}{\co2_{Stom} + \co2_{0.5}}}
+						\tag{21} \label{ct21}
+					\end{align}
+					Trong đó \textcolor{blue}{$CO2_{0.5}$} là nồng độ khí \co2 trong chất nền khi \textcolor{blue}{$P = P_{Max}/2$} $(\mu mol$ $m^{-3})$. \\
+					Giải tìm \textcolor{blue}{$\co2_{Stom}$}, từ \eqref{ct20} và \eqref{ct21}, tốc độ quang hợp \textcolor{blue}{$P$} thỏa phương trình
+					\begin{align}
+						\textcolor{blue}{
+								ResP^2 - (\co2_{Air} + \co2_{0.5} + ResP_{Max}) + \co2_{Air}P_{Max} = 0}
+							\tag{22} \label{ct22}
+					\end{align}
+					Đối với phương trình bậc 2 trên, ta chỉ quan tâm đến nghiệm \textcolor{blue}{$P$} sao cho \textcolor{blue}{$P \rightarrow P_{Max}$} khi \textcolor{blue}{$\co2_{Air} \rightarrow +\infty$}. Lưu ý, lúc này tốc độ quang hợp \textcolor{blue}{$P$} không còn phụ thuộc vào nồng độ \co2 trong khí khổng nữa mà chỉ phụ thuộc vào nồng độ \co2 trong không khí, hệ số cản trở \textcolor{blue}{$Res$} và tốc độ quang hợp cực đại.
+				\\ \\
+				\textbf{$\bullet$ Tốc độ quang hợp cực đại} \\
+					Để giải phương trình \eqref{ct22}, tốc độ quang hợp cực đại cần được xác định. Đối với mô hình cho sự quang hợp của một đơn vị lá, tốc độ quang hợp cực đại được xem như một hàm số phụ thuộc vào nhiệt độ của lá, năng lượng hoạt hóa và năng lượng ức chế enzyme. Thông thường, tốc độ đó sẽ được xác định bởi mô hình phản ứng hóa học Arrhenius
+					\begin{align}
+						\textcolor{blue}{
+							k(T) = k(T_0)e^{-\frac{H_{\alpha}}{R}(\frac{1}{T} - \frac{1}{T_0})},}
+						\tag{23} \label{ct23}
+					\end{align}
+					trong đó \textcolor{blue}{$k(T)$} là tốc độ phản ứng tại nhiệt độ \textcolor{blue}{$T$} $(K)$, \textcolor{blue}{$T_0$} là nhiệt độ tối ưu mà tốc độ phản ứng đã biết $(K)$, \textcolor{blue}{$H_{\alpha}$} là năng lượng hoạt hóa phản ứng $(J$ $mol^{-1})$ và \textcolor{blue}{$R$} là hằng số khí lý tưởng $(J$ $mol^{-1}$ $K^{-1})$. \\
+					Tuy nhiên, khi nhiệt độ càng cao, đến một ngưỡng nào đó, hoạt động của enzyme sẽ bị ức chế và làm giảm tốc độ của quá trình quang hợp. Khi đó, mô hình Arrhenius không đủ để giải thích sự ức chế của enzyme và mô hình sau được xem như là mô hình cho sự hoạt động của enzyme Rubisco trong quá trình quang hợp và phụ thuộc vào nhiệt độ của lá
+					\begin{align}
+						\textcolor{blue}{
+							f(T) = \dfrac{1 + e^{-\frac{H_d}{R}(\frac{1}{T_0} - \frac{1}{\frac{H_d}{S}})}}{1 + e^{-\frac{H_d}{R}(\frac{1}{T} - \frac{1}{\frac{H_d}{S}})}}.}
+						\tag{24} \label{ct24}
+					\end{align}
+					Trong mô hình \eqref{ct24}, \textcolor{blue}{$f(T)$} đại diện cho sự hoạt động của enzyme ở nhiệt độ \textcolor{blue}{$T$z} $(K)$, \textcolor{blue}{$H_d$} là năng lượng ức chế enzyme $(J$ $mol^{-1})$ và \textcolor{blue}{$S$} là một đại lượng entropy tương ứng $(J$ $mol^{-1}$ $K^{-1})$.\\
+					Bằng cách kết hợp mô hình \eqref{ct23} và \eqref{ct24}, tốc độ quang hợp tối đa trên mỗi đơn vị lá được cho bởi công thức
+					\begin{align}
+						\textcolor{blue}{
+							P_{Max}(T) = k(T)f(T).}
+						\tag{25} \label{ct25}
+					\end{align}
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=9cm]{quanghop_max.png}
+							\caption{\textit{Tốc độ quang hợp cực đại đã chuẩn \textcolor{blue}{$P_{Max}(T) = k(T)f(T)$} hóa}}
+							\label{h14}
+						\end{center}
+					\end{figure}
+					\begin{figure}[h!]
+						\begin{center}	
+							\includegraphics[width=10cm]{quanghop_res.png}
+							\caption{\textit{Tốc độ quang hợp với các nồng độ \co2 khác nhau trong không khí nhà kính và hệ số cản trở \textcolor{blue}{$Rez = 2.5$} (đã chuẩn hóa)}}
+							\label{h15}
+						\end{center}
+					\end{figure}
+					\newpage
+			\subsubsection{Mô hình quang hợp cho cả tán lá}
+				\textbf{$\bullet$ Chỉ số diện tích lá}
+					Trước hết ta cần xét đến khái niệm chỉ số diện tích lá (leaf area index - \lai). Chỉ số \lai được tính bởi tổng mật độ độ lá trên một đơn vị diện tích đất trong nhà kính. Khi đó, nếu tán lá càng dày thì chỉ số \lai càng cao (xem Hình \ref{h16}). Thông qua \lai và định luật Beer, năng lượng ánh sáng đi đến tán lá trước khi vào tán lá là \textcolor{blue}{$I_0$} $(\mu mol \{photons\}$ $m^{-2}$ $s^{-1})$ và sau xuyên qua tán lá là \textcolor{blue}{$I$} $(\mu mol \{photons\}$ $m^{-2}$ $s^{-1})$ đúng bằng
+					\begin{align}
+						\textcolor{blue}{
+							I = \dfrac{I_0 K e^{-K \cdot LAI}}{1 - m}}
+						\tag{26} \label{ct26}
+					\end{align}
+				
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{lai.png}
+							\caption{\textit{Chỉ số diện tích lá}}
+							\label{h16}
+						\end{center}
+					\end{figure}
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{beer.png}
+							\caption{\textit{Định luật Beer, cường độ tia tới giảm sau khi đi qua một dung dịch}}
+							\label{h17}
+						\end{center}
+					\end{figure}
+					trong đó \textcolor{blue}{$K$} là hệ số tắt có giá trị từ 0.7 đến 1.0 nếu lá cây phân tầng ngang như cây cà chua và từ 0.3 đến 0.5 nếu lá cây nằm nghiêng như trong trường hợp cây lúa nước. \textcolor{blue}{$m$} là hệ số truyền ánh sáng của lá cây, thường mặc định là 0.1. Khi đó, năng lượng ánh sáng lá cây nhận được là sự chênh lệch của lượng năng lượng của tia tới trước khi vào tán lá và năng lượng của tia ló sau khi đi qua tán lá và được tính bởi công thức
+					\begin{align}
+						\textcolor{blue}{
+							L = L_0 \left(1 - \dfrac{I_0 K e^{-K \cdot LAI}}{1 - m}\right).}
+						\tag{27} \label{ct27}
+					\end{align}			
+					Kí hiệu \textcolor{blue}{$L$} là lượng photon nhận vào bởi lá cây $(\mu mol\ \{photons\}\ m^{-2}\ s^{-1})$ và \textcolor{blue}{$L_0$} là lượng photon ban đầu phía trên tán lá.
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{lai_plot.png}
+							\caption{\textit{Sự phụ thuộc của lượng bức xạ ánh sáng nhận được từ lá cây vào chỉ số diện tích lá}}
+							\label{h18}
+						\end{center}
+					\end{figure}
+				\\ \\
+				\textbf{$\bullet$ Công thức Arrhenius mở rộng} \\
+					Để tính giá trị \textcolor{blue}{$P_{Max}$}, là tốc độ quang hợp tối đa của toàn bộ lá cây trong nhà kính, công thức mở rộng sau của Arrhenius được sử dụng trong công thức \eqref{ct25} thay cho \eqref{ct23}.
+					\begin{align}
+						\textcolor{blue}{
+							k(T) = LAI \cdot k(T_0) \cdot e^{-\frac{H_{\alpha}}{R} \left(\frac{1}{T} - \frac{1}{T_0}\right)}.}
+						\tag{28} \label{ct28}
+					\end{align}
+					Trong đó, \textcolor{blue}{$k(T)$} là tốc độ phản ứng cho toàn bộ lá cây ở nhiệt độ \textcolor{blue}{$T$} $(K)$ và \textcolor{blue}{$k(T_0)$} là tốc độ phản ứng ở điều kiện tối ưu \textcolor{blue}{$T_0$} $(K)$ của một đơn vị lá và \textcolor{blue}{$H_{\alpha}$} cũng là năng lượng hoạt hóa cho một đơn vị lá cây.
+					\\ \\
+				\textbf{$\bullet$ Mô hình động lực Michaelin - Menten cho \textcolor{blue}{$P_{Max}$}} \\
+					Khác với mô hình quang hợp cho một đơn vị lá, lượng năng lượng ánh sáng hấp thụ vào trong tán lá bị ảnh hưởng bởi \lai cần được thêm vào và ảnh hưởng đến tốc độ quang hợp cực đại \textcolor{blue}{$P_{Max}$}. Do đó, ta xét mô hình sau cho \textcolor{blue}{$P_{Max}$}, là hàm số phụ thuộc vào \textcolor{blue}{$L$} và \textcolor{blue}{$T$}.
+					\begin{align}
+						\textcolor{blue}{
+						P_{Max}(L,T) = \frac{P_{MLT} \cdot P_{Max}(T) \cdot L}{L + L_{0.5}}.}
+						\tag{29} \label{ct29}
+					\end{align}
+					Trong đó, \textcolor{blue}{$L_{0.5}$} là năng lượng ánh sáng khi \textcolor{blue}{$P_{Max}(L, T) = P_{Max}(T)/2$} $(\mu mol\ \{photons\} m^{-2} s^{-1})$, \textcolor{blue}{$P_{Max}(T)$} được tính bởi công thức \eqref{ct25} với \textcolor{blue}{$k(T)$} tính theo công thức \eqref{ct28} và \textcolor{blue}{$P_{MLT}$} là tốc độ quang hợp cực đại tại điểm bão hòa ánh sáng và nhiệt độ tối ưu \textcolor{blue}{$T$}. Thông thường \textcolor{blue}{$P_{MLT}$} được xác định dựa trên các nghiên cứu trước đó và thực nghiệm.
+					\begin{figure}[h!]
+						\begin{center}
+							\includegraphics[width=10cm]{tanla_lai.png}
+							\caption{\textit{Quang hợp của tán lá với các nồng độ \co2 khác nhau trong không khí và các giá trị \lai khác nhau}}
+							\label{h19}
+						\end{center}
+					\end{figure}
