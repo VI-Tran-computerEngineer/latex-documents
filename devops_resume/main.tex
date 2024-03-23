@@ -1,0 +1,188 @@
+%-------------------------
+% Resume in Latex
+% Author: Vi Long Tran
+% LinkedIn: www.linkedin.com/in/tran-long-vi-ce/
+%------------------------
+%------------------------
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\name{VI}{Long Tran}
+\newcommand*{\customcventry}[7][.13em]{
+\begin{tabular}{@{}l}
+{\bfseries #4} \
+{\itshape #3}
+\end{tabular}
+\hfill
+\begin{tabular}{l@{}}
+{\bfseries #5} \
+{\itshape #2}
+\end{tabular}
+\ifx&#7&%
+\else{\
+\begin{minipage}{\maincolumnwidth}%
+\small#7%
+\end{minipage}}\fi%
+\par\addvspace{#1}}
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+
+\makecvtitle
+\vspace*{-15mm}
+\begin{center}\textbf{DevOps Engineer}\end{center}
+\begin{center}
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{ c c c }
+\faMobile\enspace +84 342 863 321 & \enspace tranlongvi.ce@gmail.com & \faHome\enspace Ho Chi Minh, Vietnam
+\end{tabular}
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{ c  c }
+\faLinkedin\enspace \color{blue} \href{https://www.linkedin.com/in/tran-long-vi-ce/}{in/tran-long-vi-ce} &
+\faGithub\enspace \color{blue} \href{https://github.com/VI-Tran-computerEngineer}{github.com/VI-Tran-computerEngineer}
+\end{tabular}
+\end{center}
+
+\section{Profile}
+{
+DevOps Engineer with 2+ years of experience working in various technology fields including CI/CD, Microservices, and Embedded application developments.
+Skilled in developing platforms to support implementing and maintaining CI/CD pipelines, developing and deploying Microservices as containerization in the Kubernetes clusters.
+}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\customcventry{Aug 2018 - Sep 2022}{}{Ho Chi Minh University of Technology}{Ho Chi Minh, Vietnam}{}{Falcuty of Computer Science of Engineering}{\textit{Bachenlor of Engineering} in Computer Engineering}
+
+
+%-----------Certificates-----------------
+\section{Licenses \& Certifications}
+{\begin{itemize}[label=\textbullet]
+      \item \textit{Ets} TOEIC for Reading-Listening skills with 640/990 scores. (Aug. 2022)
+      \item \textit{Ets} TOEIC for Speaking-Writing skills with 200/400 scores. (Sep. 2022)
+      \item Fundamentals of Action Learning from \textit{WIAL Vietnam}. (Oct. 2023)
+  \end{itemize}}
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {DEK Technologies Vietnam}{Ho Chi Minh, Vietnam}
+      {DevOps Engineer}{Feb 2022 - Present}
+      \resumeItemListStart
+        \resumeItem{CI/CD Pipeline Management}
+          {Creation and maintenance of the \textbf{Argo Workflow} pipeline, streamlining development processes for enhanced efficiency.}
+        \resumeItem{Automation Expertise}
+          {Utilize \textbf{} scripts and \textbf{Python}, in conjunction with \textbf{Docker}, \textbf{Kubernetes}, \textbf{Helm}, and \textbf{Jfrog Artifactory}, to automate tasks seamlessly through the \textbf{Argo Workflow} CI pipeline.}
+        \resumeItem{Deployment Management}
+          {Proficiently work with \textbf{Argo CD} to deliver resources to designated locations, ensuring a smooth deployment process.}
+        \resumeItem{Clusters management}
+          {Use \textbf{Rancher} for effectively manage \textbf{Kubernetes} clusters.}
+        \resumeItem{Unit Testing}
+          {Employ \textbf{Python} and \textbf{Pytest} to write comprehensive unit test cases for Microservices developed using \textbf{Python}.}
+        \resumeItem{Backend deveploment}
+          {Develop Microservices nodes using \textbf{Python} that provide \textbf{RESTful APIs} to support for CI/CD pipelines.}
+        \resumeItem{Task Management}
+          {Efficiently manage daily tasks through \textbf{Jira} and follow \textbf{Agile} way of working, ensuring seamless coordination and prioritization.}
+        \resumeItem{Collaborative Problem Resolution}
+          {Proactively bring up ideas, and engage in discussions with team members to identify and resolve challenges.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {CloudNine: The Automation Software Company}{Ho Chi Minh, Vietnam}
+      {Embedded Linux Intern}{Jun 2021 - September 2021}
+      \resumeItemListStart
+        \resumeItem{Unittest implementation}
+          {Write unit test cases for C++ application using \textbf{CppTest} framework.}
+        \resumeItem{GNU Make}
+          {Write Makefile for compiling C++ application on Linux environment.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Other Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Flashcard tracker}
+      {An application built from Python and deployed in AWS ECS  that communicates with users in Telegram, helps to learn and remember vocabulary performed in Flashcard.}
+    \resumeSubItem{Health and life service}
+      {Service built from Python and deployed in AWS ECS reminds users about goals in the day and scheduler via WhatsApp.}
+    \resumeSubItem{Autonomous robot in uncertain environments}
+      {Autonomous robot has model Turtlebot3 burger that can determine obstacles and move throughout open points to go to goal.}
+  \resumeSubHeadingListEnd
+
+%-----------Certificates-----------------
+\iffalse % Current in blocked
+\section{Online Courses \& Certifications}
+{\begin{itemize}[label=\textbullet]
+      \item Introduction to Digital Marketing (Jan. 2023) - \underline{\color{blue}\href{https://google.com/}{SEMRUSH}}
+      \item Career Essentials in Digital Marketing by LinkedIn (Aug. 2022) - \underline{\color{blue}\href{https://google.com/}{LinkedIn}}
+      \item Visualization with Tableau (Feb. 2022) - \underline{\color{blue}\href{https://google.com/}{Coursera}}
+      \item Foundations of Google Analytics  (Jun. 2021) - \underline{\color{blue}\href{https://google.com/}{Google, Coursera}}
+     \item Google Analytics for Power Users (Jun. 2021) - \underline{\color{blue}\href{https://google.com/}{Google}}
+       \item The Fundamentals of Digital Marketing, (Jul. 2019) - \underline{\color{blue}\href{https://google.com/}{Google}} 
+  \end{itemize}}
+\fi
+
+%--------PROGRAMMING SKILLS------------
+\section{Skills}
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{Programming Languages:} C, C++, Python, Bash}
+\item {\textbf{Technologies:} AWS, Kubernetes, Docker, Helm, Rancher, Argo Workflows, Argo CD, Artifactory, Git}
+\item {\textbf{Developing environments:} Linux, Windows}
+\item {\textbf{Database:} MySQL, Microsoft SQL, Elasticsearch}
+\item {\textbf{Data visualization:} Kibana, Matplotlib}
+\item {\textbf{Communication Protocol:} RESTful API, MQTT, Kafka}
+\item {\textbf{Soft Skills:} Presentation, Planning, Organized, Creative Problem-Solving, Teamwork, Active Listening, Adaptability}
+\end{itemize}}
+
+%--------Languages---------------
+\section{Languages}
+\begin{multicols}{2}
+    \begin{itemize}[label=\textbullet]
+    \item \textbf{Vietnamese} [Native]
+    \item {\textbf{English} [Intermediate] - B2++}
+    \end{itemize}
+\end{multicols}
+
+%-------------------------------------------
+\end{document}
